@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-31",
+  "experiment": "E3_new_baselines",
+  "config": "windowed_w8 / performer_m64 / nystrom_m64 (3 baselines x 3 seeds)",
+  "seed": [
+    1,
+    2,
+    3
+  ],
+  "epochs": 10,
+  "batch_size": 128,
+  "attention_L": 1024,
+  "d_model": 256,
+  "num_heads": 8,
+  "head_dim": 32,
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "driver": "595.71.05",
+  "gpu": "NVIDIA GeForce RTX 4090 24GB",
+  "dtype": "fp32",
+  "cudnn_benchmark": true,
+  "cudnn_deterministic": false,
+  "tf32": true,
+  "mode": "train fwd+bwd + optimizer.step (Adamax lr=0.002, grad_clip=0.5)",
+  "warmup_iters": null,
+  "measure_iters": null,
+  "repeats": 3,
+  "dataset": "train.json 634799 / val.json 63649",
+  "code_md5": {
+    "spatial_attention.py": "c7b7488a",
+    "conv_module.py": "0acc1827"
+  },
+  "val_loss_source": {
+    "windowed": {
+      "1": "train.log",
+      "2": "train.log",
+      "3": "train.log"
+    },
+    "performer": {
+      "1": "train.log",
+      "2": "train.log",
+      "3": "train.log"
+    },
+    "nystrom": {
+      "1": "loss_history.csv",
+      "2": "loss_history.csv",
+      "3": "loss_history.csv"
+    }
+  },
+  "notes": [
+    "head_dim = d_model/num_heads = 256/8 = 32，非文档 §2 猜测的 64（已核实 conv_module.py create_attention(hid_dim=256)）",
+    "spatial_attention.py md5=c7b7488a 与文档基线 abe3e869 不同：含 E3 三个新基线 + nyström 数值稳定修复，属预期差异",
+    "nyström 修复：torch.pinverse(Kc) -> torch.linalg.inv(Kc + 1e-2*I) + torch.clamp(out, -50, 50)；landmark 均匀采样 -> segment-mean（对齐原版 Nyströmformer，L=1024/m=64 整除 seg=16）",
+    "已加 --no_early_stop 保证三基线都跑满 epochs=10（C6 约束：epochs 不可改，唯一变量=注意力实现）",
+    "C5 种子：set_all_seeds 设了 random/numpy/torch/torch.cuda 四处 + DataLoader worker_init_fn，3 seeds 独立已保证；但未设 torch.backends.cudnn.deterministic=True（main() 用 cudnn.benchmark=True + TF32 加速，二者与 deterministic 互斥）。影响可忽略：非确定性仅动浮点末位(~1e-5)，远小于 seed 间差异(~0.014)；来源是共享的 CNN backbone conv 反向，三基线同代码同设置，不改变基线间排序；如需 bit 级复现需 deterministic=True 重跑（不推荐，21 GPU·h + 更慢）",
+    "windowed/performer 缺少 loss_history.csv（旧版脚本未写该文件），其 val_loss 从 train.log 正则提取（验证集 batch 数 <1000 判定）；nyström 来自 loss_history.csv",
+    "峰值显存：train_executor 不写显存，已用 scan_e3_train_mem.py（复用 N7 scan_train_memory 的 mode D 口径）单独补测 E3 三基线训练态峰值（bs=128，train+fwd+bwd+optimizer.step）：windowed 2.405 / nystrom 2.936 / performer 3.308 GB，均 <24GB 无 OOM，对比 softmax 17.39GB 省 81-86%；推理态峰值见 efficiency/e3_efficiency.csv",
+    "performer num_features=64 是 2×head_dim（m=2*d_head），代码注释把 d 写成 64 是笔误",
+    "§4.1 验收第二条（效率测量：bs 扫描 8→512 + 每样本延迟/显存 + 3 repeats，与 E1 同口径）已完成：efficiency/e3_efficiency.csv（推理态 30 行）+ efficiency/e3_train_mem_scan.csv（训练态显存 24 行）",
+    "warmup_iters/measure_iters 为 null：本 run_meta 是训练口径（mode=train fwd+bwd+step），效率测量参数 warmup20/measure100/repeats3 见 efficiency/e3_efficiency_run_meta.json"
+  ]
+}

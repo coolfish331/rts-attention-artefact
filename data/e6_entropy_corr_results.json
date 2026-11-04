@@ -1,0 +1,726 @@
+{
+  "n_requested": 100,
+  "n_valid": 100,
+  "results": [
+    {
+      "instruction": "build a guard tower slightly northeast of town hall between the lakes",
+      "softmax_entropy": 1.7208588123321533,
+      "linear_elu_entropy": 2.0890803933143616,
+      "softmax_cmd_acc": 0.25,
+      "linear_elu_cmd_acc": 0.5
+    },
+    {
+      "instruction": "have peasant mine the mine to the north",
+      "softmax_entropy": 1.690778911113739,
+      "linear_elu_entropy": 1.777565360069275,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "build another guard tower to the north west between the lakes",
+      "softmax_entropy": 1.6195582747459412,
+      "linear_elu_entropy": 1.88034325838089,
+      "softmax_cmd_acc": 0.0,
+      "linear_elu_cmd_acc": 0.0
+    },
+    {
+      "instruction": "create 3 more peasant",
+      "softmax_entropy": 1.2410892248153687,
+      "linear_elu_entropy": 1.3234913349151611,
+      "softmax_cmd_acc": 0.25,
+      "linear_elu_cmd_acc": 0.25
+    },
+    {
+      "instruction": "send all peasant to mine to the north",
+      "softmax_entropy": 1.6321727633476257,
+      "linear_elu_entropy": 1.6959072947502136,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "one there's 250 mineral build a town hall centrally between the three visible mine",
+      "softmax_entropy": 1.949438989162445,
+      "linear_elu_entropy": 2.117691218852997,
+      "softmax_cmd_acc": 0.14285714285714285,
+      "linear_elu_cmd_acc": 0.0
+    },
+    {
+      "instruction": "have hall the peasant mine the northern mine",
+      "softmax_entropy": 1.798328161239624,
+      "linear_elu_entropy": 1.6683650612831116,
+      "softmax_cmd_acc": 0.625,
+      "linear_elu_cmd_acc": 0.5
+    },
+    {
+      "instruction": "build it near the tower",
+      "softmax_entropy": 0.9707538485527039,
+      "linear_elu_entropy": 1.4418975710868835,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "send idle peasant to mine",
+      "softmax_entropy": 1.1423355340957642,
+      "linear_elu_entropy": 1.3687652945518494,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "create a dragon",
+      "softmax_entropy": 0.7868438065052032,
+      "linear_elu_entropy": 0.5913076475262642,
+      "softmax_cmd_acc": 0.1111111111111111,
+      "linear_elu_cmd_acc": 0.1111111111111111
+    },
+    {
+      "instruction": "send all peasant to mine near town hall",
+      "softmax_entropy": 1.5692487359046936,
+      "linear_elu_entropy": 1.7805970311164856,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "train five peasant",
+      "softmax_entropy": 0.9035961627960205,
+      "linear_elu_entropy": 0.8587256968021393,
+      "softmax_cmd_acc": 0.25,
+      "linear_elu_cmd_acc": 0.25
+    },
+    {
+      "instruction": "send all peasant to mine",
+      "softmax_entropy": 1.2373486161231995,
+      "linear_elu_entropy": 1.3403518199920654,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 0.4444444444444444
+    },
+    {
+      "instruction": "send one peasant to scout to the north east",
+      "softmax_entropy": 1.6828539967536926,
+      "linear_elu_entropy": 1.8878535032272339,
+      "softmax_cmd_acc": 0.8888888888888888,
+      "linear_elu_cmd_acc": 0.7777777777777778
+    },
+    {
+      "instruction": "attack enemy peasant with all peasant at base",
+      "softmax_entropy": 1.7018426060676575,
+      "linear_elu_entropy": 1.716571033000946,
+      "softmax_cmd_acc": 0.4444444444444444,
+      "linear_elu_cmd_acc": 0.5555555555555556
+    },
+    {
+      "instruction": "move scout to north west",
+      "softmax_entropy": 1.1389280557632446,
+      "linear_elu_entropy": 1.4690828323364258,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "move idle peasant back to mine",
+      "softmax_entropy": 1.3695921301841736,
+      "linear_elu_entropy": 1.6679401397705078,
+      "softmax_cmd_acc": 0.5555555555555556,
+      "linear_elu_cmd_acc": 0.5555555555555556
+    },
+    {
+      "instruction": "attack enemy peasant",
+      "softmax_entropy": 0.8284768462181091,
+      "linear_elu_entropy": 0.9569073617458344,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 0.8888888888888888
+    },
+    {
+      "instruction": "focus on one at a time",
+      "softmax_entropy": 1.1466883420944214,
+      "linear_elu_entropy": 1.5436034798622131,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 0.8333333333333334
+    },
+    {
+      "instruction": "build 4 peasant and attack",
+      "softmax_entropy": 1.175962746143341,
+      "linear_elu_entropy": 1.2869410514831543,
+      "softmax_cmd_acc": 0.16666666666666666,
+      "linear_elu_cmd_acc": 0.16666666666666666
+    },
+    {
+      "instruction": "keep training peasant and attacking enemy",
+      "softmax_entropy": 1.2248845994472504,
+      "linear_elu_entropy": 1.4790217876434326,
+      "softmax_cmd_acc": 0.75,
+      "linear_elu_cmd_acc": 0.75
+    },
+    {
+      "instruction": "build a guard tower in between the two bodies of water",
+      "softmax_entropy": 1.5466108918190002,
+      "linear_elu_entropy": 1.9714418053627014,
+      "softmax_cmd_acc": 0.5,
+      "linear_elu_cmd_acc": 0.25
+    },
+    {
+      "instruction": "great now send the two peasant north to find a mineral node",
+      "softmax_entropy": 1.8495306968688965,
+      "linear_elu_entropy": 2.0297363996505737,
+      "softmax_cmd_acc": 0.6,
+      "linear_elu_cmd_acc": 0.4
+    },
+    {
+      "instruction": "forget it and move peasant north",
+      "softmax_entropy": 1.3062206506729126,
+      "linear_elu_entropy": 1.6010686755180359,
+      "softmax_cmd_acc": 0.2,
+      "linear_elu_cmd_acc": 0.6
+    },
+    {
+      "instruction": "back towards guard tower",
+      "softmax_entropy": 1.0329833924770355,
+      "linear_elu_entropy": 1.3397001028060913,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "send peasant to mine that visible node",
+      "softmax_entropy": 1.4524933099746704,
+      "linear_elu_entropy": 1.4510773420333862,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "attack all peasant one at a time as a group",
+      "softmax_entropy": 1.7242031693458557,
+      "linear_elu_entropy": 2.13452410697937,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "try to avoid tower",
+      "softmax_entropy": 0.9499354958534241,
+      "linear_elu_entropy": 1.2316794395446777,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "build three peasant and do the same as before move to mine to attack enemy peasant",
+      "softmax_entropy": 2.0476109981536865,
+      "linear_elu_entropy": 2.344948649406433,
+      "softmax_cmd_acc": 0.5,
+      "linear_elu_cmd_acc": 0.5
+    },
+    {
+      "instruction": "send peasant south to find mineral",
+      "softmax_entropy": 1.4060389399528503,
+      "linear_elu_entropy": 1.5771265625953674,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 0.75
+    },
+    {
+      "instruction": "build new town hall near mineral",
+      "softmax_entropy": 1.3296748995780945,
+      "linear_elu_entropy": 1.349989414215088,
+      "softmax_cmd_acc": 0.75,
+      "linear_elu_cmd_acc": 0.25
+    },
+    {
+      "instruction": "one completed mine with all peasant",
+      "softmax_entropy": 1.4539067149162292,
+      "linear_elu_entropy": 1.5449870228767395,
+      "softmax_cmd_acc": 0.8,
+      "linear_elu_cmd_acc": 0.8
+    },
+    {
+      "instruction": "create three new peasant mine with two of them",
+      "softmax_entropy": 1.7557746767997742,
+      "linear_elu_entropy": 1.748511016368866,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 0.4
+    },
+    {
+      "instruction": "mine with the third for now as well",
+      "softmax_entropy": 1.6898881793022156,
+      "linear_elu_entropy": 1.641031265258789,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "when you have enoug mineral build a guard tower to the east of town hall near the river",
+      "softmax_entropy": 1.8549347519874573,
+      "linear_elu_entropy": 2.2558650970458984,
+      "softmax_cmd_acc": 0.125,
+      "linear_elu_cmd_acc": 0.875
+    },
+    {
+      "instruction": "attack all peasants with your",
+      "softmax_entropy": 1.3111461997032166,
+      "linear_elu_entropy": 1.3836726546287537,
+      "softmax_cmd_acc": 0.625,
+      "linear_elu_cmd_acc": 0.625
+    },
+    {
+      "instruction": "create a second guard tower a little north east of other",
+      "softmax_entropy": 1.4728298783302307,
+      "linear_elu_entropy": 1.8750414848327637,
+      "softmax_cmd_acc": 0.14285714285714285,
+      "linear_elu_cmd_acc": 0.5714285714285714
+    },
+    {
+      "instruction": "build a barrack north of town",
+      "softmax_entropy": 0.8242579400539398,
+      "linear_elu_entropy": 0.9410715401172638,
+      "softmax_cmd_acc": 0.25,
+      "linear_elu_cmd_acc": 0.375
+    },
+    {
+      "instruction": "create three spearman when you can",
+      "softmax_entropy": 1.088125854730606,
+      "linear_elu_entropy": 1.2192224860191345,
+      "softmax_cmd_acc": 0.1111111111111111,
+      "linear_elu_cmd_acc": 0.1111111111111111
+    },
+    {
+      "instruction": "build a guard tower sw of town hall in game between water",
+      "softmax_entropy": 1.6805055141448975,
+      "linear_elu_entropy": 2.097040295600891,
+      "softmax_cmd_acc": 0.25,
+      "linear_elu_cmd_acc": 0.5
+    },
+    {
+      "instruction": "take three spearman to the south west and explore for enemy",
+      "softmax_entropy": 1.6344804167747498,
+      "linear_elu_entropy": 2.079738736152649,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "send idle peasant back to mine",
+      "softmax_entropy": 1.3250507712364197,
+      "linear_elu_entropy": 1.6283214688301086,
+      "softmax_cmd_acc": 0.7692307692307693,
+      "linear_elu_cmd_acc": 0.6923076923076923
+    },
+    {
+      "instruction": "create three more spearman",
+      "softmax_entropy": 1.126303791999817,
+      "linear_elu_entropy": 0.9701878726482391,
+      "softmax_cmd_acc": 0.07692307692307693,
+      "linear_elu_cmd_acc": 0.07692307692307693
+    },
+    {
+      "instruction": "attack town hall next send new spearman to join other",
+      "softmax_entropy": 1.6158313155174255,
+      "linear_elu_entropy": 1.9113820791244507,
+      "softmax_cmd_acc": 0.8666666666666667,
+      "linear_elu_cmd_acc": 0.8666666666666667
+    },
+    {
+      "instruction": "make 6 peasant",
+      "softmax_entropy": 0.7515328526496887,
+      "linear_elu_entropy": 0.7789480090141296,
+      "softmax_cmd_acc": 0.0,
+      "linear_elu_cmd_acc": 0.0
+    },
+    {
+      "instruction": "make 8 peasant mine above town hall",
+      "softmax_entropy": 1.4547656774520874,
+      "linear_elu_entropy": 1.501867413520813,
+      "softmax_cmd_acc": 0.0,
+      "linear_elu_cmd_acc": 0.0
+    },
+    {
+      "instruction": "build workshop when you can",
+      "softmax_entropy": 0.9366803765296936,
+      "linear_elu_entropy": 1.005702793598175,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "make 2 archer",
+      "softmax_entropy": 0.6108831912279129,
+      "linear_elu_entropy": 0.665612518787384,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "have idle peasant mine",
+      "softmax_entropy": 0.9787887036800385,
+      "linear_elu_entropy": 1.2994588613510132,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 0.9230769230769231
+    },
+    {
+      "instruction": "have all peasant attack cavlary",
+      "softmax_entropy": 1.3121605515480042,
+      "linear_elu_entropy": 1.556413173675537,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "have archer attack",
+      "softmax_entropy": 0.8392526507377625,
+      "linear_elu_entropy": 0.9492727816104889,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "make one worker then have all for mine the site to the north",
+      "softmax_entropy": 1.8562241792678833,
+      "linear_elu_entropy": 2.1799871921539307,
+      "softmax_cmd_acc": 0.0,
+      "linear_elu_cmd_acc": 0.0
+    },
+    {
+      "instruction": "make for more for the other site",
+      "softmax_entropy": 1.618964970111847,
+      "linear_elu_entropy": 1.45819091796875,
+      "softmax_cmd_acc": 0.2,
+      "linear_elu_cmd_acc": 0.2
+    },
+    {
+      "instruction": "kill them all",
+      "softmax_entropy": 0.6693091690540314,
+      "linear_elu_entropy": 0.9472250640392303,
+      "softmax_cmd_acc": 0.6,
+      "linear_elu_cmd_acc": 0.6
+    },
+    {
+      "instruction": "make a tower near the mine protect the worker that is making it",
+      "softmax_entropy": 1.8701410293579102,
+      "linear_elu_entropy": 2.1152522563934326,
+      "softmax_cmd_acc": 0.4,
+      "linear_elu_cmd_acc": 0.4
+    },
+    {
+      "instruction": "good now 4 to a mine site 2 mine please",
+      "softmax_entropy": 1.8599268794059753,
+      "linear_elu_entropy": 1.8436089158058167,
+      "softmax_cmd_acc": 0.8333333333333334,
+      "linear_elu_cmd_acc": 0.5
+    },
+    {
+      "instruction": "send two peasant to locate a mine and mine",
+      "softmax_entropy": 1.758126139640808,
+      "linear_elu_entropy": 1.7361329793930054,
+      "softmax_cmd_acc": 0.75,
+      "linear_elu_cmd_acc": 0.75
+    },
+    {
+      "instruction": "build two peasant",
+      "softmax_entropy": 0.8168640732765198,
+      "linear_elu_entropy": 0.9564656317234039,
+      "softmax_cmd_acc": 0.0,
+      "linear_elu_cmd_acc": 0.2
+    },
+    {
+      "instruction": "send the peasant southeast",
+      "softmax_entropy": 1.0750952064990997,
+      "linear_elu_entropy": 1.1898693442344666,
+      "softmax_cmd_acc": 0.8,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "mine the southeast mine",
+      "softmax_entropy": 1.25015527009964,
+      "linear_elu_entropy": 1.2587921619415283,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 0.8
+    },
+    {
+      "instruction": "with all peasant",
+      "softmax_entropy": 0.8962105512619019,
+      "linear_elu_entropy": 1.0592988729476929,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 0.8
+    },
+    {
+      "instruction": "build a blacksmith when you can between the two mine",
+      "softmax_entropy": 1.7171131372451782,
+      "linear_elu_entropy": 1.3849735856056213,
+      "softmax_cmd_acc": 0.0,
+      "linear_elu_cmd_acc": 0.0
+    },
+    {
+      "instruction": "attack the peasant",
+      "softmax_entropy": 0.9192922413349152,
+      "linear_elu_entropy": 1.0075270533561707,
+      "softmax_cmd_acc": 0.875,
+      "linear_elu_cmd_acc": 0.875
+    },
+    {
+      "instruction": "keep creating swordsman",
+      "softmax_entropy": 0.9045359194278717,
+      "linear_elu_entropy": 0.8099566400051117,
+      "softmax_cmd_acc": 0.125,
+      "linear_elu_cmd_acc": 0.25
+    },
+    {
+      "instruction": "attack the town hall",
+      "softmax_entropy": 1.1291789412498474,
+      "linear_elu_entropy": 1.1550485491752625,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "send all swordsman to attack the town hall",
+      "softmax_entropy": 1.5399500131607056,
+      "linear_elu_entropy": 1.735921025276184,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "make six peasant",
+      "softmax_entropy": 0.7138859331607819,
+      "linear_elu_entropy": 0.7061821669340134,
+      "softmax_cmd_acc": 0.25,
+      "linear_elu_cmd_acc": 0.25
+    },
+    {
+      "instruction": "send peasant south west to find a mine and start mining",
+      "softmax_entropy": 1.9142450094223022,
+      "linear_elu_entropy": 2.095672607421875,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 0.8
+    },
+    {
+      "instruction": "build guard tower on east side of the two mine close to them",
+      "softmax_entropy": 1.9195085167884827,
+      "linear_elu_entropy": 2.0394275188446045,
+      "softmax_cmd_acc": 0.9,
+      "linear_elu_cmd_acc": 0.7
+    },
+    {
+      "instruction": "all attack the peasant and catapult",
+      "softmax_entropy": 1.13638436794281,
+      "linear_elu_entropy": 1.452313244342804,
+      "softmax_cmd_acc": 0.16666666666666666,
+      "linear_elu_cmd_acc": 0.16666666666666666
+    },
+    {
+      "instruction": "make 3 peasant",
+      "softmax_entropy": 0.9935185313224792,
+      "linear_elu_entropy": 1.0070894956588745,
+      "softmax_cmd_acc": 0.5,
+      "linear_elu_cmd_acc": 0.5
+    },
+    {
+      "instruction": "mine directly north",
+      "softmax_entropy": 0.9210915267467499,
+      "linear_elu_entropy": 0.9737303555011749,
+      "softmax_cmd_acc": 0.75,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "ok go back to original mine",
+      "softmax_entropy": 1.4325228333473206,
+      "linear_elu_entropy": 1.6095963716506958,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "send all peasant to scout to east",
+      "softmax_entropy": 1.5837808847427368,
+      "linear_elu_entropy": 1.7820072174072266,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 0.75
+    },
+    {
+      "instruction": "build a new town hall near those mine",
+      "softmax_entropy": 1.5008031725883484,
+      "linear_elu_entropy": 1.515148639678955,
+      "softmax_cmd_acc": 0.25,
+      "linear_elu_cmd_acc": 0.25
+    },
+    {
+      "instruction": "have all peasant collect at mine and back to that town hall",
+      "softmax_entropy": 1.999094545841217,
+      "linear_elu_entropy": 2.175364136695862,
+      "softmax_cmd_acc": 0.8,
+      "linear_elu_cmd_acc": 0.8
+    },
+    {
+      "instruction": "train a new peasant and have them mine",
+      "softmax_entropy": 1.5619663000106812,
+      "linear_elu_entropy": 1.9681733846664429,
+      "softmax_cmd_acc": 0.8,
+      "linear_elu_cmd_acc": 0.8
+    },
+    {
+      "instruction": "have to peasant collect at north mine and two at south",
+      "softmax_entropy": 1.8850118517875671,
+      "linear_elu_entropy": 1.758155345916748,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "send that peasant to south if he won't mine at north",
+      "softmax_entropy": 1.7589440941810608,
+      "linear_elu_entropy": 1.869154691696167,
+      "softmax_cmd_acc": 0.8333333333333334,
+      "linear_elu_cmd_acc": 0.8333333333333334
+    },
+    {
+      "instruction": "build a tower to south east of town hall in the gap",
+      "softmax_entropy": 1.5933160781860352,
+      "linear_elu_entropy": 1.9378994703292847,
+      "softmax_cmd_acc": 0.16666666666666666,
+      "linear_elu_cmd_acc": 0.3333333333333333
+    },
+    {
+      "instruction": "build another tower to west of that tower",
+      "softmax_entropy": 1.5388097167015076,
+      "linear_elu_entropy": 1.6474140286445618,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "build a workshop to east of town hall",
+      "softmax_entropy": 0.9974554181098938,
+      "linear_elu_entropy": 1.6463850140571594,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "build a stable east of workshop",
+      "softmax_entropy": 1.2728586196899414,
+      "linear_elu_entropy": 1.3115168809890747,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "train a peasant and have them mine at southern mine",
+      "softmax_entropy": 1.7250520586967468,
+      "linear_elu_entropy": 2.1341781616210938,
+      "softmax_cmd_acc": 0.1111111111111111,
+      "linear_elu_cmd_acc": 0.1111111111111111
+    },
+    {
+      "instruction": "send idle peasant to northern mine",
+      "softmax_entropy": 1.331357479095459,
+      "linear_elu_entropy": 1.482275366783142,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "train a catapult",
+      "softmax_entropy": 0.6723238974809647,
+      "linear_elu_entropy": 0.5732587948441505,
+      "softmax_cmd_acc": 0.09090909090909091,
+      "linear_elu_cmd_acc": 0.09090909090909091
+    },
+    {
+      "instruction": "train two cavalry",
+      "softmax_entropy": 0.9844933152198792,
+      "linear_elu_entropy": 0.5647194385528564,
+      "softmax_cmd_acc": 0.09090909090909091,
+      "linear_elu_cmd_acc": 0.09090909090909091
+    },
+    {
+      "instruction": "train two archer",
+      "softmax_entropy": 0.7142602205276489,
+      "linear_elu_entropy": 0.569824680685997,
+      "softmax_cmd_acc": 0.07142857142857142,
+      "linear_elu_cmd_acc": 0.07142857142857142
+    },
+    {
+      "instruction": "send the peasant in different directions to scout for resources",
+      "softmax_entropy": 1.535165548324585,
+      "linear_elu_entropy": 1.9044910073280334,
+      "softmax_cmd_acc": 0.25,
+      "linear_elu_cmd_acc": 0.75
+    },
+    {
+      "instruction": "all peasant mine on the closest mine to them",
+      "softmax_entropy": 1.9047467112541199,
+      "linear_elu_entropy": 1.8710612654685974,
+      "softmax_cmd_acc": 0.5,
+      "linear_elu_cmd_acc": 0.5
+    },
+    {
+      "instruction": "stop the peasant and build a town hall north of the eastern mine",
+      "softmax_entropy": 1.9289799332618713,
+      "linear_elu_entropy": 1.9412261247634888,
+      "softmax_cmd_acc": 0.25,
+      "linear_elu_cmd_acc": 0.5
+    },
+    {
+      "instruction": "send all peasant to mine near the east town hall",
+      "softmax_entropy": 1.7542366981506348,
+      "linear_elu_entropy": 1.9759783148765564,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "build 2 peasant",
+      "softmax_entropy": 0.992741733789444,
+      "linear_elu_entropy": 1.0105931162834167,
+      "softmax_cmd_acc": 0.3333333333333333,
+      "linear_elu_cmd_acc": 0.3333333333333333
+    },
+    {
+      "instruction": "all peasant attack peasant you see south the north mine",
+      "softmax_entropy": 1.6878076791763306,
+      "linear_elu_entropy": 2.0709977746009827,
+      "softmax_cmd_acc": 0.5714285714285714,
+      "linear_elu_cmd_acc": 0.5714285714285714
+    },
+    {
+      "instruction": "make 3 more peasant",
+      "softmax_entropy": 1.2256815433502197,
+      "linear_elu_entropy": 1.3175601363182068,
+      "softmax_cmd_acc": 0.25,
+      "linear_elu_cmd_acc": 0.25
+    },
+    {
+      "instruction": "use the node with the new peasant",
+      "softmax_entropy": 1.3963754177093506,
+      "linear_elu_entropy": 1.8134246468544006,
+      "softmax_cmd_acc": 0.5714285714285714,
+      "linear_elu_cmd_acc": 0.5714285714285714
+    },
+    {
+      "instruction": "create one more peasant",
+      "softmax_entropy": 0.9396205544471741,
+      "linear_elu_entropy": 1.2122446298599243,
+      "softmax_cmd_acc": 0.14285714285714285,
+      "linear_elu_cmd_acc": 0.14285714285714285
+    },
+    {
+      "instruction": "take the new peasant west",
+      "softmax_entropy": 0.9990900158882141,
+      "linear_elu_entropy": 1.3582874536514282,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "return to home base",
+      "softmax_entropy": 0.8925867080688477,
+      "linear_elu_entropy": 0.9065071642398834,
+      "softmax_cmd_acc": 1.0,
+      "linear_elu_cmd_acc": 1.0
+    },
+    {
+      "instruction": "build three tower to the west of the three node near the all entrance",
+      "softmax_entropy": 1.9260029196739197,
+      "linear_elu_entropy": 1.9356883764266968,
+      "softmax_cmd_acc": 0.875,
+      "linear_elu_cmd_acc": 0.875
+    }
+  ],
+  "correlation": {
+    "softmax": {
+      "n": 100,
+      "pearson": 0.05435666915852187,
+      "spearman": 0.04498049804980497,
+      "pearson_p": 0.5899556569514175
+    },
+    "linear_elu": {
+      "n": 100,
+      "pearson": 0.15980220347127377,
+      "spearman": 0.05802580258025802,
+      "pearson_p": 0.10903283455655055
+    },
+    "combined": {
+      "n": 200,
+      "pearson": 0.10517891725123843,
+      "spearman": 0.03995049876246906,
+      "pearson_p": 0.1366840723436158
+    }
+  }
+}

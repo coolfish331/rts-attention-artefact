@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-04",
+  "experiment": "E8_kernel_ablation",
+  "config": "linear attention kernel ablation (elu/relu/none) × 1 seed",
+  "attention_L": 1024,
+  "d_model": 256,
+  "num_heads": 8,
+  "head_dim": 32,
+  "batch_size": 128,
+  "epochs": 10,
+  "optimizer": "Adamax lr=0.002",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "driver": "595.71.05",
+  "gpu": "NVIDIA GeForce RTX 4090 24GB",
+  "dtype": "fp32",
+  "cudnn_benchmark": true,
+  "tf32": true,
+  "code_md5": {
+    "spatial_attention.py": "E8-with-linear_kernel（c7b7488a 基础上加 kernel 参数）",
+    "conv_module.py": "0acc1827（加 linear_kernel 透传）"
+  },
+  "results": {
+    "elu": {
+      "phi": "elu(x)+1",
+      "fwd_bwd_ms": 15.8390,
+      "fwd_bwd_ms_std": 0.0174,
+      "peak_mem_gb": 2.1751,
+      "val_loss_ep10": 2.8709,
+      "status": "stable (reused E2 linear_seed1)"
+    },
+    "relu": {
+      "phi": "relu(x)+1",
+      "fwd_bwd_ms": 15.7447,
+      "fwd_bwd_ms_std": 0.0138,
+      "peak_mem_gb": 2.1751,
+      "val_loss_ep10": 2.8762,
+      "status": "stable"
+    },
+    "none": {
+      "phi": "x",
+      "fwd_bwd_ms": 13.8654,
+      "fwd_bwd_ms_std": 0.0031,
+      "peak_mem_gb": 1.9067,
+      "val_loss_ep10": null,
+      "train_loss_ep4": 3279338.3,
+      "status": "DIVERGED (train loss 3.28M at epoch4, terminated early)"
+    }
+  },
+  "conclusion": "none 核延迟最快（快 12.5%）但训练发散（无 +1 偏置，normalizer 出现极小/负值）；elu/relu 稳定且等价（val_loss 2.87）。ELU 是延迟-质量权衡下的正确选择。旧稿「None 最快 vs ELU 最优」矛盾 = 维度混淆，二者分别对应延迟/质量维度。",
+  "notes": [
+    "none 核在 epoch4 已发散（train loss 327 万），提前终止，未跑满 10 epoch",
+    "val_loss：elu 复用 E2 linear seed1；relu/none 由 run_e8.sh 新跑，与 E2 同口径（bs=128/epochs=10/Adamax/--no_early_stop）",
+    "延迟测量：模块级 train() fwd+bwd，cuda.Event + max_memory_allocated，与 N4 同口径"
+  ]
+}

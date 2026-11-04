@@ -1,0 +1,49 @@
+{
+  "experiment": "N5_entropy_space",
+  "L": 1024,
+  "log_L": 6.931,
+  "N": 200,
+  "N_valid": 200,
+  "data_source": "val.json 63649 (deduplicated instructions, top 200)",
+  "checkpoint": {
+    "softmax": "ablation_softmax_seed1/checkpoint10.pt",
+    "linear": "ablation_linear_seed1/checkpoint10.pt"
+  },
+  "H_raw": {
+    "softmax_mean": 4.863,
+    "softmax_std": 0.2103,
+    "linear_mean": 4.5743,
+    "linear_std": 0.1124
+  },
+  "H_norm": {
+    "softmax_mean": 0.7016,
+    "softmax_std": 0.0303,
+    "linear_mean": 0.6599,
+    "linear_std": 0.0162
+  },
+  "paired_t": {
+    "n": 200,
+    "delta": 0.2888,
+    "ci95": [
+      0.2664,
+      0.3112
+    ],
+    "t": 25.29,
+    "df": 199,
+    "p": 0.0
+  },
+  "correlation": {
+    "softmax": {
+      "n": 200,
+      "pearson": -0.1178
+    },
+    "linear": {
+      "n": 200,
+      "pearson": -0.1529
+    },
+    "combined": {
+      "n": 400,
+      "pearson": -0.1121
+    }
+  }
+}

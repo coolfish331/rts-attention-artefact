@@ -1,0 +1,194 @@
+{
+  "attention_types": [
+    "windowed",
+    "performer",
+    "nystrom"
+  ],
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "best_selection": "val_loss_min (fallback cmd_type_max)",
+  "missing": [],
+  "no_accuracy": [],
+  "results": {
+    "windowed": {
+      "best_epochs": [
+        10,
+        10,
+        9
+      ],
+      "per_seed": [
+        {
+          "seed": 1,
+          "best_ep": 10,
+          "acc": {
+            "glob_cont": 0.831796,
+            "cmd_type": 0.757421,
+            "move": 0.030525,
+            "attack": 0.634111,
+            "gather": 0.690554
+          },
+          "val_loss": 2.8833
+        },
+        {
+          "seed": 2,
+          "best_ep": 10,
+          "acc": {
+            "glob_cont": 0.83233,
+            "cmd_type": 0.796038,
+            "move": 0.028653,
+            "attack": 0.633062,
+            "gather": 0.680698
+          },
+          "val_loss": 2.8955
+        },
+        {
+          "seed": 3,
+          "best_ep": 9,
+          "acc": {
+            "glob_cont": 0.830571,
+            "cmd_type": 0.781613,
+            "move": 0.024677,
+            "attack": 0.62264,
+            "gather": 0.685421
+          },
+          "val_loss": 2.9356
+        }
+      ],
+      "mean": {
+        "glob_cont": 0.8315656666666666,
+        "cmd_type": 0.7783573333333333,
+        "move": 0.027951666666666666,
+        "attack": 0.6299376666666666,
+        "gather": 0.6855576666666666
+      },
+      "std": {
+        "glob_cont": 0.0009018371989075362,
+        "cmd_type": 0.019513269749924882,
+        "move": 0.0029864154656265313,
+        "attack": 0.0063416917564111785,
+        "gather": 0.004929421095152374
+      }
+    },
+    "performer": {
+      "best_epochs": [
+        8,
+        10,
+        10
+      ],
+      "per_seed": [
+        {
+          "seed": 1,
+          "best_ep": 8,
+          "acc": {
+            "glob_cont": 0.824475,
+            "cmd_type": 0.769447,
+            "move": 0.035378,
+            "attack": 0.62854,
+            "gather": 0.690144
+          },
+          "val_loss": 2.9009
+        },
+        {
+          "seed": 2,
+          "best_ep": 10,
+          "acc": {
+            "glob_cont": 0.830429,
+            "cmd_type": 0.691612,
+            "move": 0.032045,
+            "attack": 0.624672,
+            "gather": 0.67577
+          },
+          "val_loss": 2.8889
+        },
+        {
+          "seed": 3,
+          "best_ep": 10,
+          "acc": {
+            "glob_cont": 0.825135,
+            "cmd_type": 0.805341,
+            "move": 0.035612,
+            "attack": 0.621854,
+            "gather": 0.68768
+          },
+          "val_loss": 2.8994
+        }
+      ],
+      "mean": {
+        "glob_cont": 0.8266796666666666,
+        "cmd_type": 0.7554666666666666,
+        "move": 0.034345,
+        "attack": 0.625022,
+        "gather": 0.6845313333333333
+      },
+      "std": {
+        "glob_cont": 0.0032637440667634154,
+        "cmd_type": 0.05813913183333005,
+        "move": 0.001995291707996604,
+        "attack": 0.003356713273426835,
+        "gather": 0.007686907397213345
+      }
+    },
+    "nystrom": {
+      "best_epochs": [
+        9,
+        8,
+        8
+      ],
+      "per_seed": [
+        {
+          "seed": 1,
+          "best_ep": 9,
+          "acc": {
+            "glob_cont": 0.812189,
+            "cmd_type": 0.818739,
+            "move": 0.015672,
+            "attack": 0.604221,
+            "gather": 0.628337
+          },
+          "val_loss": 3.259136
+        },
+        {
+          "seed": 2,
+          "best_ep": 8,
+          "acc": {
+            "glob_cont": 0.807978,
+            "cmd_type": 0.78146,
+            "move": 0.017017,
+            "attack": 0.611956,
+            "gather": 0.648049
+          },
+          "val_loss": 3.187976
+        },
+        {
+          "seed": 3,
+          "best_ep": 8,
+          "acc": {
+            "glob_cont": 0.820657,
+            "cmd_type": 0.763259,
+            "move": 0.022806,
+            "attack": 0.625131,
+            "gather": 0.662628
+          },
+          "val_loss": 3.109816
+        }
+      ],
+      "mean": {
+        "glob_cont": 0.813608,
+        "cmd_type": 0.7878193333333333,
+        "move": 0.018498333333333332,
+        "attack": 0.6137693333333334,
+        "gather": 0.646338
+      },
+      "std": {
+        "glob_cont": 0.006457509659303644,
+        "cmd_type": 0.028281415104858744,
+        "move": 0.003790679402604939,
+        "attack": 0.010572282550770817,
+        "gather": 0.017209410536099118
+      }
+    }
+  }
+}

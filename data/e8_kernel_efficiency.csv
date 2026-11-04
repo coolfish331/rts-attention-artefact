@@ -1,0 +1,4 @@
+﻿kernel,L,fwd_bwd_ms_mean,fwd_bwd_ms_std,peak_mem_gb
+elu,1024,15.8390,0.0174,2.1751
+relu,1024,15.7447,0.0138,2.1751
+none,1024,13.8654,0.0031,1.9067
