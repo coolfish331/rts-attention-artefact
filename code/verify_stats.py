@@ -216,5 +216,5 @@ for a in ("windowed", "performer", "nystrom"):
 
 print("\n" + "=" * 78)
 print(f"RESULT: {sum(CHECKS)}/{len(CHECKS)} numeric checks match the manuscript.")
-print("Items tagged REVIEW should be inspected before interpreting the artefact.")
+print("See Section [5] for the documented pooled-p convention difference.")
 print("=" * 78)
