@@ -13,8 +13,15 @@ README.md
 data/    21 verbatim CSV / JSON traces (no value has been edited)
 code/
     verify_stats.py   re-derives every numerical claim from data/
-    make_figs.py      regenerates Figures 5 and 6 from data/
+    make_figs.py      regenerates Figures 4 and 6 from data/
     requirements.txt  numpy, scipy, matplotlib
+training/
+    behavior_clone/   model code: six attention variants, CNN backbone,
+                      five action heads, training entry point
+    common_utils/     shared helpers (seeding, counters, parser, optimiser)
+    run.sh            one-line reproduction wrapper
+    ENVIRONMENT.md    dependencies, data provenance, output-to-table map
+    THIRD_PARTY_NOTICE.md  upstream attribution and licence
 ```
 
 ## Reproducing the numbers
@@ -31,21 +38,45 @@ equivalence p-values at three margins, `cmd_type` accuracy at the best-loss
 epoch, pooled entropy–accuracy correlation, log–log length-scan exponents and
 R², four-mode timing ratios (`D/A`, `C/B`), the softmax out-of-memory boundary,
 and the kernel ablation. Each check prints the recomputed value next to the
-value reported in the manuscript.
+value reported in the manuscript. Retraining is not required for any of these
+checks.
+
+## Training code
+
+`training/` contains the anonymised source used to produce the runs whose
+traces are in `data/`. It covers all six attention variants (baseline,
+softmax, ELU linear attention, windowed, Performer, Nystromformer), the
+shared CNN backbone and five action heads, and a single-command training
+entry point. See `training/ENVIRONMENT.md` for the exact command, the
+hyperparameters, the output CSVs and the mapping to the manuscript tables.
+The second attention position examined in the manuscript (`L <= 15`) is a
+fixed-checkpoint entropy analysis, not a separate training configuration,
+so it has no counterpart in this code.
+
+Nineteen files in `training/` are derived from the public MiniRTS release
+(CC BY-NC 4.0). Attribution, licence link, modifications and added files are
+recorded in `training/THIRD_PARTY_NOTICE.md`. No weights, checkpoints, logs
+or dataset files are included.
 
 ## Data → manuscript cross-reference
 
 | Files | Used in |
 |---|---|
-| `e2_val_loss_per_seed.csv`, `e2_action_acc_per_seed.csv`, `e2_run_meta.json` | Table II (protocol), Table IV (quality), Table VI (action accuracy), Sec. V.A (metric-definition sensitivity), Table V (inference) |
-| `e1_efficiency.csv`, `e3_efficiency.csv` | Table VI / Fig. 3 (inference efficiency), Fig. 6 (Pareto x-axis) |
-| `e3_val_loss_per_seed.csv`, `e3_action_acc_per_seed.csv`, `e3_baseline_comparison.json`, `e3_run_meta.json`, `e3_machine.json`, `e3_epoch_time.csv` | Table IV, Table V (six-group tests), Sec. V.A |
+| `e2_val_loss_per_seed.csv`, `e2_action_acc_per_seed.csv`, `e2_run_meta.json` | Table II (protocol), Table IV (quality), Table VI (action accuracy), Sec. V.A (metric-definition sensitivity), Fig. 2 (learning curves) |
+| `e1_efficiency.csv`, `e3_efficiency.csv` | Table VII (per-sample inference efficiency), Fig. 3 (inference memory vs batch), Fig. 6 (Pareto x-axis), Table IX (training cost) |
+| `e3_val_loss_per_seed.csv`, `e3_action_acc_per_seed.csv`, `e3_baseline_comparison.json`, `e3_run_meta.json`, `e3_machine.json`, `e3_epoch_time.csv` | Table IV, Table V (six-group tests), Table VI, Sec. V.A |
 | `e6_entropy_results.json`, `e6_entropy_corr_results.json` | Table XII and Sec. V.D (instruction-position entropy and correlation) |
 | `n5_entropy_space.json` | Table XII (spatial-position entropy) |
-| `e7_lscan.csv` | Table X and Fig. 4 (length scan, fitted exponents, crossovers) |
+| `e7_lscan.csv` | Table X and Fig. 5 (length scan, fitted exponents, crossovers) |
 | `e8_kernel_efficiency.csv`, `e8_run_meta.json` | Table XI (ELU / ReLU / no-offset ablation) |
-| `n7_bwd_ratio_calibration.csv`, `n7_train_mem_scan.csv`, `n7_machine.json` | Table III (four-mode calibration), Table VIII and Fig. 5 (training-mode memory) |
-| `e3_train_mem_scan.csv` | Table VIII and Fig. 5 (three approximation baselines) |
+| `n7_bwd_ratio_calibration.csv`, `n7_train_mem_scan.csv`, `n7_machine.json` | Table III (four-mode calibration), Table VIII and Fig. 4 (training-mode memory) |
+| `e3_train_mem_scan.csv` | Table VIII and Fig. 4 (three approximation baselines) |
+| `training/` source | Table I (six variants), Table II (protocol), Fig. 1 (architecture); not needed for the numeric checks |
+
+Figure/table numbers above follow the journal version: Fig. 1 architecture,
+Fig. 2 learning curves, Fig. 3 inference memory, Fig. 4 training-mode memory,
+Fig. 5 length scan, Fig. 6 Pareto; Tables I–XII are in the order given by
+their captions in the manuscript.
 
 ## Measurement conventions
 
@@ -56,7 +87,8 @@ value reported in the manuscript.
   value; it is not the best-epoch metric of Table IV.
 * Efficiency modes: A = `eval()` + `no_grad()` forward; B = `train()` forward;
   C = forward + backward; D = forward + backward + `optimizer.step()`.
-  Table III reports all four; Tables VI/VIII use the mode stated in their captions.
+  Table III reports all four; Table VII uses mode A and Table VIII uses
+  mode D, as stated in their captions.
 * Length-scan exponents are fitted only on the asymptotic intervals
   (`L = 529..2025` for softmax, `L = 1024..4096` for linear); fitting all
   points including the small-`L` plateau would bias the slope.

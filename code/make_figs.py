@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
-"""Regenerate Figures 5 and 6 of the manuscript from the raw traces.
+"""Regenerate Figures 4 and 6 of the manuscript from the raw traces.
 
-Fig. 5  Training-mode peak memory vs batch size, all six configurations.
+Fig. 4  Training-mode peak memory vs batch size, all six configurations.
 Fig. 6  Quality--efficiency Pareto view (best validation loss vs per-sample
         inference latency at batch 128).
+
+The output filenames (fig5_train_mem_scan.png / fig6_pareto.png) keep the
+historical naming used during figure preparation; they do NOT indicate the
+figure numbers in the journal version. Length scaling is Fig. 5 there.
 
 Run from the repository root:
     pip install -r code/requirements.txt
@@ -61,7 +65,7 @@ def latency_at_128(fname, atts):
     return out
 
 
-# ------------------------------------------------------------------ Fig. 5
+# ------------------------------------------------ Journal Fig. 4 (file: fig5_*)
 series, oom = {}, []
 for r in rows("n7_train_mem_scan.csv") + rows("e3_train_mem_scan.csv"):
     lab, b = NAME[r["attention_type"]], int(r["batch_size"])
@@ -95,7 +99,7 @@ fig.savefig(OUT / "fig5_train_mem_scan.png", dpi=300, bbox_inches="tight")
 plt.close(fig)
 print("wrote figures/fig5_train_mem_scan.png")
 
-# ------------------------------------------------------------------ Fig. 6
+# ------------------------------------------------------------------ Journal Fig. 6
 quality = {}
 quality.update(best_loss("e2_val_loss_per_seed.csv", {"none", "softmax", "linear"}))
 quality.update(best_loss("e3_val_loss_per_seed.csv", {"windowed", "performer", "nystrom"}))
