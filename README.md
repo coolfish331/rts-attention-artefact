@@ -49,9 +49,13 @@ softmax, ELU linear attention, windowed, Performer, Nystromformer), the
 shared CNN backbone and five action heads, and a single-command training
 entry point. See `training/ENVIRONMENT.md` for the exact command, the
 hyperparameters, the output CSVs and the mapping to the manuscript tables.
-The second attention position examined in the manuscript (`L <= 15`) is a
-fixed-checkpoint entropy analysis, not a separate training configuration,
-so it has no counterpart in this code.
+The `dict.pt` instruction vocabulary is **not** supplied by the upstream
+download: it is a pickled `InstructionDict` generated from the instruction
+corpus by `python scripts/behavior_clone/inst_dict.py` (see
+`training/ENVIRONMENT.md` Sec. 2 for the note about the public upstream file
+being a class definition only). The second attention position examined in the
+manuscript (`L <= 15`) is a fixed-checkpoint entropy analysis, not a separate
+training configuration, so it has no counterpart in this code.
 
 Nineteen files in `training/` are derived from the public MiniRTS release
 (CC BY-NC 4.0). Attribution, licence link, modifications and added files are
@@ -116,6 +120,18 @@ driver 595.71.05, `cudnn.benchmark=True`, TF32 enabled. Full hyperparameters,
 seed policy and timing protocol are given in Table II of the manuscript and in
 the `*_run_meta.json` files. Run-metadata files retain the original operator
 notes verbatim; they contain no identifying information.
+
+### Code-version metadata
+
+The MD5 prefixes recorded in some `*_run_meta.json` files (`c7b7488a`,
+`917e5f84`, `0acc1827`) are **intermediate snapshots from different
+experimental stages**, not checksums of the final implementation. The code
+evolved between the E3 and E8 runs, when the Nystrom diagonal-loading repair
+and the `--linear_kernel` switch were added, so those values changed from
+stage to stage and must **not** be used to judge version consistency. The
+metadata JSON files are kept verbatim and no checksum has been edited; see
+`training/ENVIRONMENT.md` Sec. 7 for the full account of the three
+release-only edits and of the attention code that was left untouched.
 
 ## Note on generated images
 

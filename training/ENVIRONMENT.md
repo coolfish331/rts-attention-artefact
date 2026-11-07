@@ -48,11 +48,28 @@ dev split                      #   2,000 samples, instruction-level spot checks 
 ```
 
 The `.json` files are lists of per-frame samples with keys `instruction`,
-`map`, unit attributes and target commands. `dict.pt` is a pickled
+`map`, unit attributes and target commands.
+
+`dict.pt` is **not** part of the upstream download. It is a pickled
 `InstructionDict` (class defined in `behavior_clone/inst_dict.py`) holding the
-instruction vocabulary; it must be supplied at `--inst_dict_path` and is not
-redistributed in this bundle. Place the three files under `data/dataset/` or
-pass their locations on the command line.
+instruction vocabulary, generated from the instruction corpus by a
+preprocessing pass. In the experimental environment the entry point is, from
+the root of the upstream checkout:
+
+```bash
+python scripts/behavior_clone/inst_dict.py    # writes dict.pt
+```
+
+A note for readers starting from a clean upstream clone: the public release
+ships `scripts/behavior_clone/inst_dict.py` as a **class definition only**
+(7,353 bytes, identical to `behavior_clone/inst_dict.py` in this bundle), with
+no `__main__` block and no pickle output. The generation entry point -- count
+word and instruction frequencies over the corpus, instantiate
+`InstructionDict`, pickle it to `dict.pt` -- is part of the experimental fork
+used for the reported runs. Add that short block before running the command
+above. The resulting file is passed at `--inst_dict_path`; place it with the
+two `.json` files under `data/dataset/` or pass its location on the command
+line. It is not redistributed in this bundle.
 
 **The data files are not redistributed here.** They are obtained from the
 public upstream release cited above; this bundle contains only model code,
@@ -172,7 +189,7 @@ identified by comments in each file (attention insertion and flags,
 `--no_early_stop`, seed policy, per-epoch CSV writers, optional logging
 fallback).
 
-## 7. Scope and code-version metadata
+## 7. Scope and code provenance
 
 This bundle covers the **main study only**: the attention module is inserted
 at the spatial position (`32x32` map, `L = 1024`). The second position
@@ -182,14 +199,43 @@ control based on attention-weight entropy from fixed checkpoints
 separate training configuration, so it has no counterpart in this training
 code.
 
-The original run metadata records MD5 prefixes `c7b7488a` (E2/E3 runs) and
-`917e5f84` (N7 runs) for `spatial_attention.py`, and `0acc1827` for
-`conv_module.py`. The files in this bundle have different checksums because
-they were cleaned for anonymous release: machine-specific comments were
-removed, neutral copyright headers were added, and the per-epoch CSV writers
-were added to the training entry point. The attention-side contents match the
-description in Sec. III exactly (six variants, `d_model = 256`, `h = 8`,
-`head_dim = 32`, the three kernel switches, `8x8` windows, `m = 64`
-orthogonal features, and `m = 64` segment-mean landmarks with diagonal
-loading). All raw traces in `../data/` were produced by the recorded runs and
-are re-derived by `../code/verify_stats.py`.
+### Code-version metadata (please read before comparing checksums)
+
+The `*_run_meta.json` files in `../data/` record MD5 prefixes `c7b7488a`
+(E2/E3 runs) and `917e5f84` (N7 runs) for `spatial_attention.py`, and
+`0acc1827` for `conv_module.py`. **These are intermediate snapshots taken at
+different stages of the experiment, not checksums of the final code.** The
+implementation evolved continuously between the E3 and E8 runs: the Nystrom
+diagonal-loading repair (`Kc + 1e-2 * I`) and the `--linear_kernel` switch
+were added after the earlier snapshots, so the recorded MD5 values changed
+from stage to stage. These values must therefore **not** be used as a
+version-consistency test for the final implementation.
+
+The files supplied here (MD5 prefixes `a9e4b8a5` / `763b76fd`) differ from
+those snapshots for that reason, plus three non-functional edits made solely
+for anonymous release:
+
+1. the copyright header of the study-owned `spatial_attention.py` was
+   replaced by a neutral statement (all 19 upstream-derived files keep their
+   original copyright headers verbatim);
+2. two Chinese comments were translated into English (the Nystrom landmark
+   comment and the `--linear_kernel` docstring);
+3. per-epoch `loss_history.csv` / `val_accuracy.csv` writers were added to
+   the training entry point.
+
+The attention implementations themselves are unchanged from the final
+experimental version: no line of `_attention` or `_feature_map` in the five
+attention classes, of the `create_attention` factory, of the `ConvFeatNet`
+integration point, of the Nystrom repair or of the `--linear_kernel` argument
+was modified. Their contents match Sec. III of the manuscript (six variants,
+`d_model = 256`, `h = 8`, `head_dim = 32`, the three kernel switches, `8x8`
+windows, `m = 64` orthogonal features, and `m = 64` segment-mean landmarks
+with diagonal loading).
+
+All raw traces in `../data/` were produced by the recorded runs and are
+re-derived by `../code/verify_stats.py`. The run-metadata JSON files are kept
+verbatim: this section is an explanatory note, and **no checksum inside any
+delivered trace has been edited**. As an independent structural check, the
+linear-attention module has 262,144 parameters, exactly the
+baseline-to-attended parameter increase reported in the manuscript
+(2,350,740 -> 2,612,884).
